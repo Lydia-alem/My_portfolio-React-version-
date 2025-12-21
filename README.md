@@ -1,4 +1,18 @@
-# React + Vite
+# My Portfolio 💻🚀🌐
+My portfolio using 💻 React and Vite, showcasing my projects 📂, skills 🛠️, and contact info ✉️. 🚀 Responsive SPA built with functional components ⚛️, hooks 🔗, and CSS Modules 🎨. 🌐
+---
+## Features ✨
+- **Home Section**: Introduction with name, photo, and a short bio.  
+- **Projects Section**: Display of projects completed this semester with title, description, tech stack, GitHub link, and optional live demo.  
+- **Skills Section**: Overview of technical skills including languages, frameworks, and tools.  
+- **Contact Section**: Email and LinkedIn info; optional functional contact form.  
+---
+## Tech Stack 🛠️
+- **Languages:** HTML, CSS, JavaScript  
+- **Frameworks:** React  
+- **Tools:** Vite, Git, GitHub  
+- **Styling:** CSS Modules  
+ 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
