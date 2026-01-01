@@ -4,7 +4,7 @@ const Hero = () => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [fade, setFade] = useState(true);
   
-  const titles = ['IT Student', 'Full-Stack Developer', 'Flutter Developer'];
+  const titles = ['STIC Student', 'Full-Stack Developer'];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -79,7 +79,7 @@ const Hero = () => {
               opacity: '0.9'
             }}>
               I'm passionate about creating beautiful, functional web experiences.
-              Currently studying Information Technology at University of Constantine2
+              Currently studying Master1 Information and Communication Technologies at University of Constantine2
               while building modern web applications.
             </p>
             <div className="cta-buttons" style={{ display: 'flex', gap: '20px' }}>

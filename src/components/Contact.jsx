@@ -17,11 +17,50 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend
     console.log('Form submitted:', formData);
     alert('Thank you for your message! I\'ll get back to you soon.');
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
+
+  // First, add this CSS for Material Icons in your index.html head:
+  // <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  const contactDetails = [
+    {
+      id: 1,
+      type: 'email',
+      icon: 'email', 
+      text: 'lydia.alem@univ-constantine2.dz',
+      link: 'mailto:lydia.alem@univ-constantine2.dz'
+    },
+    {
+      id: 2,
+      type: 'phone',
+      icon: 'phone',
+      text: '0782283233',
+      link: 'tel:+213782283233'
+    },
+    {
+      id: 3,
+      type: 'location',
+      icon: 'location_on',
+      text: 'Constantine, Algeria'
+    },
+    {
+      id: 4,
+      type: 'linkedin',
+      icon: 'people',
+      text: 'Lydia Alem',
+      link: 'https://www.linkedin.com/in/lydia-alem-2a5550343'
+    },
+    {
+      id: 5,
+      type: 'github',
+      icon: 'code',
+      text: 'Lydia-alem',
+      link: 'https://github.com/Lydia-alem'
+    }
+  ];
 
   return (
     <section id="contact" className="contact" style={{
@@ -40,6 +79,10 @@ const Contact = () => {
         }}>
           Get In Touch
         </h2>
+        
+        {/* Add Material Ions font if Font Awesome is not working */}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        
         <div className="contact-container" style={{
           display: 'flex',
           gap: '50px'
@@ -57,39 +100,72 @@ const Contact = () => {
               flexDirection: 'column',
               gap: '20px'
             }}>
-              <div className="contact-item" style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '15px'
-              }}>
-                <i className="fas fa-envelope" style={{
-                  fontSize: '24px',
-                  color: 'var(--primary)'
-                }}></i>
-                <span>lydiaalem@gmail.com</span>
-              </div>
-              <div className="contact-item" style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '15px'
-              }}>
-                <i className="fas fa-phone" style={{
-                  fontSize: '24px',
-                  color: 'var(--primary)'
-                }}></i>
-                <span>0782283233</span>
-              </div>
-              <div className="contact-item" style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '15px'
-              }}>
-                <i className="fas fa-map-marker-alt" style={{
-                  fontSize: '24px',
-                  color: 'var(--primary)'
-                }}></i>
-                <span>Constantine, Algeria</span>
-              </div>
+              {contactDetails.map((item) => (
+                item.link ? (
+                  <a
+                    key={item.id}
+                    href={item.link}
+                    target={item.type === 'email' || item.type === 'phone' ? '_self' : '_blank'}
+                    rel={item.type === 'linkedin' || item.type === 'github' ? 'noopener noreferrer' : ''}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '15px',
+                      textDecoration: 'none',
+                      color: 'var(--light)',
+                      transition: 'all 0.3s ease',
+                      padding: '12px 15px',
+                      borderRadius: '8px',
+                      background: 'rgba(255, 255, 255, 0.05)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)'
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                      e.currentTarget.style.transform = 'translateX(5px)';
+                      e.currentTarget.style.borderColor = 'var(--primary)';
+                      e.currentTarget.style.color = 'var(--primary)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                      e.currentTarget.style.transform = 'translateX(0)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                      e.currentTarget.style.color = 'var(--light)';
+                    }}
+                  >
+                    <span className="material-icons" style={{
+                      fontSize: '24px',
+                      color: 'var(--primary)',
+                      width: '30px'
+                    }}>
+                      {item.icon}
+                    </span>
+                    <span style={{ fontSize: '16px' }}>{item.text}</span>
+                  </a>
+                ) : (
+                  <div
+                    key={item.id}
+                    className="contact-item"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '15px',
+                      padding: '12px 15px',
+                      borderRadius: '8px',
+                      background: 'rgba(255, 255, 255, 0.05)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)'
+                    }}
+                  >
+                    <span className="material-icons" style={{
+                      fontSize: '24px',
+                      color: 'var(--primary)',
+                      width: '30px'
+                    }}>
+                      {item.icon}
+                    </span>
+                    <span style={{ fontSize: '16px' }}>{item.text}</span>
+                  </div>
+                )
+              ))}
             </div>
             <div className="social-links" style={{
               display: 'flex',
@@ -97,26 +173,43 @@ const Contact = () => {
               gap: '20px',
               marginTop: '30px'
             }}>
-              {['github', 'linkedin-in', 'twitter', 'instagram'].map((platform) => (
+              {[
+                { platform: 'github', link: 'https://github.com/Lydia-alem', icon: 'code' },
+                { platform: 'linkedin', link: 'https://www.linkedin.com/in/lydia-alem-2a5550343', icon: 'people' },
+                { platform: 'email', link: 'mailto:lydia.alem@univ-constantine2.dz', icon: 'email' },
+               
+              ].map((social) => (
                 <a
-                  key={platform}
-                  href="#"
+                  key={social.platform}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     color: 'var(--light)',
                     fontSize: '24px',
                     transition: 'all 0.3s ease',
-                    textDecoration: 'none'
+                    textDecoration: 'none',
+                    padding: '10px',
+                    borderRadius: '50%',
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    width: '50px',
+                    height: '50px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                   }}
                   onMouseOver={(e) => {
                     e.target.style.color = 'var(--primary)';
                     e.target.style.transform = 'translateY(-5px)';
+                    e.target.style.background = 'rgba(255, 255, 255, 0.1)';
                   }}
                   onMouseOut={(e) => {
                     e.target.style.color = 'var(--light)';
                     e.target.style.transform = 'translateY(0)';
+                    e.target.style.background = 'rgba(255, 255, 255, 0.05)';
                   }}
                 >
-                  <i className={`fab fa-${platform}`}></i>
+                  <span className="material-icons">{social.icon}</span>
                 </a>
               ))}
             </div>
@@ -302,7 +395,7 @@ const Contact = () => {
                   e.target.style.boxShadow = '0 10px 20px rgba(255, 0, 255, 0.3)';
                 }}
               >
-                <i className="fas fa-paper-plane"></i> Send Message
+                <span className="material-icons">send</span> Send Message
               </button>
             </form>
           </div>

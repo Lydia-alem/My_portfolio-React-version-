@@ -4,21 +4,24 @@ const Projects = () => {
   const [projects] = useState([
     {
       id: 1,
-      title: 'E-commerce Platform',
+      title: 'SIMOU COSMETIQUE',
       description: 'Full-stack e-commerce solution from scratch and PHP',
-      technologies: ['HTML', 'CSS','JavaScript', 'PHP', 'SQL']
+      technologies: ['HTML', 'CSS','JavaScript', 'PHP', 'SQL'],
+      link: 'https://simoucosmetique.com/',
     },
     {
       id: 2,
-      title: 'Restaurant App',
-      description: 'Mobile application for discovering restaurants  ',
-      technologies: ['Flutter', 'PHP']
+      title: 'RYMEMBALLAGE',
+      description: 'a software for managing printing services',
+      technologies: ['HTML', 'CSS','JavaScript', 'PHP', 'SQL'],
+      link: 'https://rymemballage.com/' 
     },
     {
       id: 3,
-      title: 'Portfolio Website',
+      title: 'portfolio website ',
       description: 'Responsive portfolio with modern design',
-      technologies: ['React', 'CSS3', 'JavaScript']
+      technologies: ['React','Vite', 'CSS3', 'JavaScript'],
+      link: 'https://github.com/Lydia-alem/My_portfolio-React-version-.git' 
     }
   ]);
 
@@ -54,13 +57,14 @@ const Projects = () => {
                 padding: '30px',
                 backdropFilter: 'blur(5px)',
                 transition: 'transform 0.3s ease',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                position: 'relative'
               }}
               onMouseOver={(e) => {
-                e.target.style.transform = 'translateY(-10px)';
+                e.currentTarget.style.transform = 'translateY(-10px)';
               }}
               onMouseOut={(e) => {
-                e.target.style.transform = 'translateY(0)';
+                e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <h3 style={{
@@ -77,7 +81,7 @@ const Projects = () => {
               }}>
                 {project.description}
               </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px' }}>
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
@@ -92,6 +96,38 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
+              
+              {}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-block',
+                    padding: '10px 20px',
+                    background: '#FF00FF',
+                    color: 'white',
+                    textDecoration: 'none',
+                    borderRadius: '25px',
+                    fontWeight: '600',
+                    transition: 'all 0.3s ease',
+                    textAlign: 'center',
+                    width: '100%',
+                    boxSizing: 'border-box'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.opacity = '0.8';
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.opacity = '1';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                >
+                  View Project
+                </a>
+              )}
             </div>
           ))}
         </div>
