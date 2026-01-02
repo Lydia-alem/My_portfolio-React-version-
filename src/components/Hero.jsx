@@ -151,8 +151,8 @@ const Hero = () => {
               className="floating"
               style={{
                 width: '100%',
-                maxWidth: '400px',
-                height: '400px',
+                maxWidth: '450px',
+                height: '450px',
                 objectFit: 'cover',
                 borderRadius: '50%',
                 boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',

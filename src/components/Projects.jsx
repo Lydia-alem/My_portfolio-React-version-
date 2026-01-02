@@ -22,7 +22,43 @@ const Projects = () => {
       description: 'Responsive portfolio with modern design',
       technologies: ['React','Vite', 'CSS3', 'JavaScript'],
       link: 'https://github.com/Lydia-alem/My_portfolio-React-version-.git' 
+    },
+    {
+      id: 4,
+      title: 'GESTPRO: PLatforme pour gerer les projets de master 2 ',
+      description: 'A presentation of a platform to manage Master 2 projects effectively',
+      technologies: ['Canva'],
+      link: 'https://www.canva.com/design/DAGYsQHeMZs/uiIGNb_rg8CUx96kLFryCw/edit?utm_content=DAGYsQHeMZs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton' 
+    },
+    {
+      id: 5,
+      title: 'Kanban Board ',
+      description: 'A Kanban board for project management',
+      technologies: ['React', 'Vite', 'CSS'],
+      link: 'https://github.com/Lydia-alem/My_portfolio-React-version-.git' 
+    },
+    {
+      id: 6,
+      title: 'LAB5 ',
+      description: 'React-Components-Practice-LAB5_caw-project',
+      technologies: ['React', 'CSS'],
+      link: 'https://github.com/Lydia-alem/React-Components-Practice-LAB5_caw-.git' 
+    },
+    {
+      id: 7,
+      title: 'LAB4 ',
+      description: 'Unit Testing with JEST',
+      technologies: ['React', 'JEST', 'CSS'],
+      link: 'https://github.com/lydiaalm4/caw_lab4.git' 
+    },
+    {
+      id: 8,
+      title: 'LAB3 ',
+      description: 'Node.js & NPM Practice',
+      technologies: ['Node.js', 'CSS'],
+      link: 'https://github.com/lydiaalm4/caw-lab3.git' 
     }
+
   ]);
 
   return (
