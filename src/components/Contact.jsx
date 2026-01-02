@@ -11,7 +11,7 @@ const Contact = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
 
-  // Check screen size on mount and resize
+  //  screen size 
   useEffect(() => {
     const checkScreenSize = () => {
       const width = window.innerWidth;
