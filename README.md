@@ -11,8 +11,9 @@ My portfolio using 💻 React and Vite, showcasing my projects 📂, skills 🛠
 - **Languages:** HTML, CSS, JavaScript  
 - **Frameworks:** React  
 - **Tools:** Vite, Git, GitHub  
-- **Styling:** CSS Modules  
- 
+- **Styling:** CSS Modules
+---
+## link:https://myportfolio.simoucosmetique.com/
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
